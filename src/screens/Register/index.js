@@ -6,155 +6,132 @@ import { useState } from "react";
 
 const { width } = Dimensions.get('window');
 
-export const Register = () => {
-  const navigation = useNavigation();
-
-  const [nome, setNome] = useState("");
-  const [idade, setIdade] = useState("");
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
-
-  const handleRegister = () => {
-    Alert.alert("Conta criada", "Conta criada com sucesso!");
-    navigation.navigate("Login");
-  };
-
+export default function Login() {
   return (
     <View style={styles.container}>
-      <StatusBar hidden />
-      <ScrollView contentContainerStyle={styles.innerContainer}>
-        
-        <Image style={styles.logo} source={Logo} resizeMode="contain" />
-        
-        <Text style={styles.title}>NSM.org</Text>
-        <Text style={styles.subtitle}>Crie seu login</Text>
+      
+      <Image
+        style={styles.logo}
+        source={Logo}
+        resizeMode="contain"
+      />
 
-        <View style={styles.inputBox}>
+      <Text style={styles.title}>NSM.org</Text>
+      
 
-          <Text style={styles.label}>Nome :</Text>
-          <TextInput
-            value={nome}
-            onChangeText={setNome}
-            style={styles.input}
-            placeholder="Digite seu nome"
-            placeholderTextColor="#999"
-          />
+      <Text style={styles.label}>Nome</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="E-mail"
+        placeholderTextColor="#999"
+      />
 
-          <Text style={styles.label}>Idade :</Text>
-          <TextInput
-            value={idade}
-            onChangeText={setIdade}
-            style={styles.input}
-            placeholder="Digite sua idade"
-            placeholderTextColor="#999"
-            keyboardType="numeric"
-          />
+      <Text style={styles.label}>Idade</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Idade"
+        placeholderTextColor="#999"
+      />
 
-          <Text style={styles.label}>E-mail :</Text>
-          <TextInput
-            value={email}
-            onChangeText={setEmail}
-            style={styles.input}
-            placeholder="Digite seu e-mail"
-            placeholderTextColor="#999"
-          />
+      <Text style={styles.label}>E-mail</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="E-mail"
+        placeholderTextColor="#999"
+      />
 
-          <Text style={styles.label}>Senha :</Text>
-          <TextInput
-            value={senha}
-            onChangeText={setSenha}
-            style={styles.input}
-            placeholder="Digite sua senha"
-            placeholderTextColor="#999"
-            secureTextEntry
-          />
+      <Text style={styles.label}>Celular</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Celular"
+        placeholderTextColor="#999"
+      />
 
-        </View>
+      <Text style={styles.label}>Senha</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Senha"
+        secureTextEntry
+        placeholderTextColor="#999"
+      />
 
-        <View style={styles.footer}>
-          <Text style={styles.loginText}>
-            Já tem um login?{" "}
-            <Text style={styles.loginLink} onPress={() => navigation.navigate("Login")}>
-              entrar.
-            </Text>
-          </Text>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Criar Conta</Text>
+      </TouchableOpacity>
 
-          <TouchableOpacity style={styles.button} onPress={handleRegister}>
-            <Text style={styles.buttonText}>Criar conta</Text>
-          </TouchableOpacity>
-        </View>
-        
-      </ScrollView>
+      <Text style={styles.registerText}>
+        Já possui uma conta?
+
+        <Text style={styles.registerLink}>
+          Entrar
+        </Text>
+  
+      </Text>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FFDE59",
-  },
-  innerContainer: {
     alignItems: "center",
-    paddingVertical: 50,
-    paddingHorizontal: 20,
+    justifyContent: "center",
+    paddingHorizontal: 50,
   },
+
   logo: {
     width: width * 0.4,
     height: width * 0.4,
-    marginBottom: 10,
   },
+
   title: {
-    fontSize: 28,
+    marginBottom: 20,
+    fontSize: 38,
+    color: "#4E3D27",
     fontWeight: "bold",
-    color: "#4E3D27",
-    marginBottom: 5,
   },
-  subtitle: {
-    fontSize: 18,
-    color: "#4E3D27",
-    marginBottom: 30,
-  },
-  inputBox: {
-    width: "100%",
-    marginBottom: 30,
-  },
+  
   label: {
+    alignSelf: "flex-start",
     color: "#4E3D27",
-    fontSize: 14,
-    marginBottom: 5,
-    marginLeft: 10,
+    fontSize: 16,
+    fontWeight: "bold",
+    paddingHorizontal: 10,
+    marginVertical: 5,
   },
   input: {
-    backgroundColor: "white",
-    borderRadius: 30,
-    height: 40,
-    paddingHorizontal: 15,
-    marginBottom: 15,
-  },
-  footer: {
-    alignItems: "center",
+    fontSize: 16,
+    backgroundColor: "#fff",
     width: "100%",
-  },
-  loginText: {
-    color: "#4E3D27",
-    marginBottom: 10,
-  },
-  loginLink: {
-    color: "#B68200",
-    fontWeight: "bold",
+    borderRadius: 15,
+    paddingHorizontal: 10,
+    paddingVertical: 10,
+    marginBottom: 2,
   },
   button: {
     backgroundColor: "#4E3D27",
-    paddingVertical: 12,
-    paddingHorizontal: 40,
-    borderRadius: 25,
+    width: "40%",
+    height: 50,
+    borderRadius: 40,
+    paddingVertical: 8,
+    marginTop: 50,
     alignItems: "center",
-    marginTop: 10,
+    justifyContent: "center",
   },
   buttonText: {
     color: "#FFF",
-    fontSize: 16,
+    fontSize: 20,
+  },
+  registerText: {
+    marginTop: 20,
+    color: "#4E3D27",
+    marginBottom: 10,
+    MarginLeft: 10,
+  },
+  registerLink: {
+    color: "#B68200",
     fontWeight: "bold",
+    marginLeft: 10,
   },
 });

@@ -1,218 +1,181 @@
-import { Image, StyleSheet, Text, TextInput, View, Dimensions, ScrollView } from "react-native";
+import React from 'react';
+import { View, Text, StyleSheet, Image, Dimensions, ScrollView } from 'react-native';
 import Logo from "../../../assets/logoNSM.png";
-import UserPhoto from "../../../assets/userPhoto.png";
+import News1 from "../../../assets/news1.png";
+import News2 from "../../../assets/news2.png";
+import Girasol from "../../../assets/girasol.png";
 
-const { width } = Dimensions.get("window");
+const { width } = Dimensions.get('window');
 
-export const Account = () => {
+export default function Home() {
   return (
-    <ScrollView style={styles.container}>
-      <View style={styles.header}>
-        <Image source={Logo} style={styles.logo} resizeMode="contain" />
-        <Text style={styles.headerTitle}>NSM.org</Text>
-        <View style={styles.headerIcons}>
-        </View>
-      </View>
+    <View style={styles.container}>
+      <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
 
-      <View style={styles.card}>
-        <Image source={UserPhoto} style={styles.userPhoto} />
-        <Text style={styles.userName}>Lucas Queiroz</Text>
-        <Text style={styles.userAge}>20 anos</Text>
-
-        <View style={styles.humorStatus}>
-          <Text style={styles.humorStatusText}>Como estou me sentindo hoje?</Text>
-          <View style={styles.moodIcons}>
-            <Text>😡 😠 😐 🙂 😁</Text>
-            <View style={styles.moodBar} />
+        <View style={styles.header}>
+          <View style={styles.headerContent}>
+            <Image style={styles.logo} source={Logo} resizeMode="contain" />
+            <Text style={styles.title}>NSM.org</Text>
           </View>
         </View>
 
-        <Text style={styles.labelHumor}>descrição do humor:</Text>
-        <TextInput
-          style={styles.humorInput}
-          defaultValue="teste"
-        />
-      </View>
+        <View style={styles.newsSection}>
+          <View style={styles.newsItem}>
+            <Image style={styles.newsImage} source={News1} resizeMode="cover" />
+            <Text style={styles.newsText}>
+              Rede de Atenção Psicossocial ultrapassa meta de expansão em 2024
+            </Text>
+          </View>
 
-      <Text style={styles.historyTitle}>Seu histórico</Text>
-
-      <View style={styles.historyCard}>
-        <View style={styles.moodDots}>
-          {Array.from({ length: 6 }).map((_, i) => (
-            <View key={i} style={styles.moodRow}>
-              {["red", "green", "orange", "red"].map((color, j) => (
-                <View key={j} style={[styles.dot, { backgroundColor: color }]} />
-              ))}
-            </View>
-          ))}
+          <View style={styles.newsItem}>
+            <Image style={styles.newsImage} source={News2} resizeMode="cover" />
+            <Text style={styles.newsText}>
+              Brasil enfrenta recorde de afastamentos por transtornos mentais
+            </Text>
+          </View>
         </View>
 
-        <View style={styles.historyTextBox}>
-          {[
-            "Teste",
-            "Teste",
-            "Teste",
-            "Teste",
-          ].map((text, index) => (
-            <View key={index} style={styles.historyItem}>
-              <Text style={styles.historyText}>{text}</Text>
-              <View
-                style={[
-                  styles.statusDot,
-                  { backgroundColor: index % 2 === 0 ? "green" : "red" },
-                ]}
-              />
-            </View>
-          ))}
+        <View style={styles.contentSection}>
+          <View style={styles.contentBox}>
+            <Text style={styles.contentText}>
+              • Artigos sobre ansiedade, depressão, estresse, autoestima e muito mais {"\n"}
+              • Ferramentas para autocuidado e práticas de relaxamento {"\n"}
+              • Testes informativos e guias sobre quando procurar ajuda profissional {"\n"}
+              • Conteúdos elaborados por especialistas em psicologia e saúde mental
+            </Text>
+            <Image style={styles.girasol} source={Girasol} resizeMode="contain" />
+          </View>
         </View>
-      </View>
-    </ScrollView>
+
+        <View style={styles.footer}>
+          <Text style={styles.footerText}>
+            <Text style={{ fontWeight: "bold" }}>Você Sabia?</Text> {"\n"}
+            O que você come afeta diretamente seu humor. {"\n"}
+            Dietas ricas em vegetais, frutas, grãos integrais e ômega-3 (como peixes) estão associadas a menores taxas de depressão. Já dietas com excesso de alimentos ultraprocessados e açúcares podem aumentar o risco de problemas mentais.
+          </Text>
+        </View>
+
+      </ScrollView>
+    </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFDE59",
-  },
-  header: {
-    alignItems: "flex-start",
-    backgroundColor: "#FFDE59",
-    paddingTop: 40,
-    marginLeft: 50,
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
-  },
-  logo: {
-    width: 60,
-    height: 60,
-  },
-  headerTitle: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "#4E3D27",
-    marginTop: 5,
-  },
-  headerIcons: {
-    flexDirection: "row",
-    marginTop: 10,
-    justifyContent: "space-between",
-    width: "80%",
-  },
-  icon: {
-    fontSize: 20,
-    marginHorizontal: 5,
-  },
-  card: {
-    backgroundColor: "#4E3D27",
-    margin: 20,
-    padding: 20,
-    borderRadius: 20,
-    alignItems: "center",
   },
 
-  userPhoto: {
-    width: 80,
-    height: 80,
-    borderRadius: 40,
-    marginVertical: 10,
+  scrollContent: {
+    flexGrow: 1,
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    paddingBottom: 20,
   },
-  userName: {
-    color: "white",
-    fontSize: 18,
-    fontWeight: "bold",
+
+  header: {
+    flex: 0.2,
+    width: '100%',
+    backgroundColor: '#FFDE59',
+    paddingTop: 40,
+    paddingBottom: 20,
+    borderBottomStartRadius: 40,
+    borderBottomEndRadius: 40,
   },
-  userAge: {
-    color: "white",
-    marginBottom: 20,
+
+  headerContent: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 20,
   },
-  humorStatus: {
-    backgroundColor: "#FFDE59",
-    padding: 15,
-    borderRadius: 20,
-    width: "100%",
-    alignItems: "center",
-    marginBottom: 15,
-  },
-  humorStatusText: {
-    fontSize: 16,
-    fontWeight: "bold",
-    color: "#4E3D27",
-    marginBottom: 10,
-  },
-  moodIcons: {
-    alignItems: "center",
-  },
-  moodBar: {
-    height: 5,
-    backgroundColor: "red",
-    borderRadius: 10,
-    width: 100,
-    marginTop: 5,
-  },
-  labelHumor: {
-    color: "white",
-    alignSelf: "flex-start",
-    marginBottom: 5,
-  },
-  humorInput: {
-    backgroundColor: "white",
-    paddingHorizontal: 10,
-    paddingVertical: 8,
-    borderRadius: 20,
-    width: "100%",
-    color: "#333",
-  },
-  historyTitle: {
-    marginLeft: 20,
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "#4E3D27",
-  },
-  historyCard: {
-    backgroundColor: "#4E3D27",
-    margin: 20,
-    padding: 20,
-    borderRadius: 20,
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  moodDots: {
-    flexDirection: "column",
-    gap: 5,
-  },
-  moodRow: {
-    flexDirection: "row",
-    gap: 5,
-    marginVertical: 2,
-  },
-  dot: {
-    width: 10,
-    height: 10,
-    borderRadius: 5,
-  },
-  historyTextBox: {
-    flex: 1,
-    marginLeft: 10,
-    gap: 10,
-  },
-  historyItem: {
-    flexDirection: "row",
-    alignItems: "center",
-    backgroundColor: "#FFF",
-    borderRadius: 20,
-    paddingHorizontal: 15,
-    paddingVertical: 8,
-    justifyContent: "space-between",
-  },
-  historyText: {
-    color: "#333",
-    flex: 1,
+
+  logo: {
+    width: 40,
+    height: 40,
     marginRight: 10,
   },
-  statusDot: {
-    width: 10,
-    height: 10,
-    borderRadius: 5,
+
+  title: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    color: '#5C4012',
+  },
+
+  newsSection: {
+    flex: 0.3,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: '100%',
+    paddingVertical: 15,
+    marginVertical: 30,
+  },
+
+  newsItem: {
+    backgroundColor: "#4E3D27",
+    width: width * 0.42,
+    marginHorizontal: 5,
+    overflow: 'hidden',
+    backgroundColor: '#fff',
+    borderRadius: 10,
+  },
+
+  newsImage: {
+    width: '100%',
+    height: 100,
+  },
+
+  newsText: {
+    backgroundColor: "#4E3D27",
+    fontSize: 12,
+    padding: 6,
+    color: 'white',
+    borderBottomRightRadius: 10,
+    borderBottomLeftRadius: 10,
+  },
+
+  contentSection: {
+    flex: 0.3,
+    width: '100%',
+    alignItems: 'center',
+    marginVertical: 10,
+  },
+
+  contentBox: {
+    width: '90%',
+    height: '100%',
+    backgroundColor: '#4E3D27',
+    borderRadius: 20,
+    padding: 15,
+    flexDirection: 'column',
+    position: 'relative',
+  },
+
+  contentText: {
+    fontSize: 15,
+    color: 'white',
+    lineHeight: 18,
+  },
+
+  girasol: {
+    width: 60,
+    height: 60,
+    position: 'absolute',
+    bottom: 10,
+    right: 10,
+    opacity: 0.4,
+  },
+
+  footer: {
+    flex: 0.2,
+    width: '100%',
+    padding: 15,
+    backgroundColor: '#FFDE59',
+    borderTopLeftRadius: 30,
+    borderTopRightRadius: 30,
+  },
+
+  footerText: {
+    fontSize: 13,
+    color: '#333',
+    lineHeight: 18,
   },
 });

@@ -6,93 +6,74 @@ import { useState } from "react";
 
 const { width } = Dimensions.get('window');
 
-export const Login = () => {
-  const navigation = useNavigation();
-
-  const [email, setEmail] = useState("");
-  const [senha, setSenha] = useState("");
-
-  const handleLogin = () => {
-    Alert.alert("Login", "Login simulado com sucesso!");
-    navigation.navigate("Home");
-  };
-
+export default function Login() {
   return (
     <View style={styles.container}>
-      <StatusBar hidden />
-      <ScrollView contentContainerStyle={styles.innerContainer}>
+      
+      <Image
+        style={styles.logo}
+        source={Logo}
+        resizeMode="contain"
+      />
 
-        <Text style={styles.title}>NSM.org</Text>
-        
-        <Image
-          style={styles.logo}
-          source={Logo}
-          resizeMode="contain"
-        />
+      <Text style={styles.title}>NSM.org</Text>
+      
 
-        <Text style={styles.label}>Login</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="E-mail"
-          placeholderTextColor="#999"
-          value={email}
-          onChangeText={setEmail}
-        />
+      <Text style={styles.label}>Login</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="E-mail"
+        placeholderTextColor="#999"
+      />
 
-        <Text style={styles.label}>Senha</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Senha"
-          secureTextEntry
-          placeholderTextColor="#999"
-          value={senha}
-          onChangeText={setSenha}
-        />
+      <Text style={styles.label}>Senha</Text>
+      <TextInput
+        style={styles.input}
+        placeholder="Senha"
+        secureTextEntry
+        placeholderTextColor="#999"
+      />
 
-        <TouchableOpacity style={styles.button} onPress={handleLogin}>
-          <Text style={styles.buttonText}>Entrar</Text>
-        </TouchableOpacity>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Entrar</Text>
+      </TouchableOpacity>
 
-        <Text style={styles.registerText}>
-          Não tem uma conta?
-          <Text style={styles.registerLink} onPress={() => navigation.navigate("Register")}>
-            Criar Conta
-          </Text>
+      <Text style={styles.registerText}>
+        Não tem uma conta?
+
+        <Text style={styles.registerLink}>
+          Criar Conta
         </Text>
-
-      </ScrollView>
+  
+      </Text>
     </View>
   );
-};
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FFDE59",
     alignItems: "center",
-  },
-  innerContainer: {
-    width: width * 0.75,
-    alignItems: "center",
     justifyContent: "center",
-    marginVertical: 150,
+    paddingHorizontal: 50,
   },
-  title: {
-    fontSize: 42,
-    color: "#4E3D27",
-    fontWeight: "bold",
-    marginBottom: 10,
-    fontFamily: "Times New Roman, serif",
-  },
+
   logo: {
     width: width * 0.5,
     height: width * 0.5,
-    marginBottom: 40,
   },
+
+  title: {
+    marginBottom: 50,
+    fontSize: 40,
+    color: "#4E3D27",
+    fontWeight: "bold",
+  },
+  
   label: {
     alignSelf: "flex-start",
     color: "#4E3D27",
-    fontFamily: "Arial, serif",
     fontSize: 16,
     fontWeight: "bold",
     paddingHorizontal: 10,
@@ -110,6 +91,7 @@ const styles = StyleSheet.create({
   button: {
     backgroundColor: "#4E3D27",
     width: "40%",
+    height: 50,
     borderRadius: 40,
     paddingVertical: 8,
     marginTop: 50,
@@ -124,6 +106,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     color: "#4E3D27",
     marginBottom: 10,
+    MarginLeft: 10,
   },
   registerLink: {
     color: "#B68200",
