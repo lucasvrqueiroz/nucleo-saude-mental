@@ -1,9 +1,12 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, Dimensions, ScrollView } from 'react-native';
-import Logo from "../../../assets/logoNSM.png";
-import News1 from "../../../assets/news1.png";
-import News2 from "../../../assets/news2.png";
-import Girasol from "../../../assets/girasol.png";
+import { View, Text, StyleSheet, Image, Dimensions, ScrollView, TouchableOpacity } from 'react-native';
+import NavBar from "../../components/navbar"
+import UserPhoto from '../../../assets/userPhoto.png';
+import VeryAngry from "../../../assets/emojis/veryAngry.png"
+import Angry from "../../../assets/emojis/angry.png"
+import Neutral from "../../../assets/emojis/neutral.png"
+import Happy from "../../../assets/emojis/happy.png"
+import VeryHappy from "../../../assets/emojis/veryHappy.png"
 
 const { width } = Dimensions.get('window');
 
@@ -12,170 +15,189 @@ export default function Home() {
     <View style={styles.container}>
       <ScrollView contentContainerStyle={styles.scrollContent} showsVerticalScrollIndicator={false}>
 
-        <View style={styles.header}>
-          <View style={styles.headerContent}>
-            <Image style={styles.logo} source={Logo} resizeMode="contain" />
-            <Text style={styles.title}>NSM.org</Text>
+        <View style={styles.userSection}>
+          <Image
+            style={styles.userPhoto}
+            source={UserPhoto}
+            resizeMode='cover'
+          />
+          <View style={styles.userInfo}>
+            <Text style={styles.userName}>Lucas Queiroz</Text>
+            <Text style={styles.userAge}>20 Anos</Text>
+            <Text style={styles.userAge}>(19) 98304-4377</Text>
+            <Text style={styles.userAge}>lucas.vrq07@gmail.com</Text>
           </View>
+
         </View>
 
-        <View style={styles.newsSection}>
-          <View style={styles.newsItem}>
-            <Image style={styles.newsImage} source={News1} resizeMode="cover" />
-            <Text style={styles.newsText}>
-              Rede de Atenção Psicossocial ultrapassa meta de expansão em 2024
-            </Text>
+        <View style={styles.humorBox}>
+          <Text style={styles.humorText}>Como estou me sentindo hoje?</Text>
+
+          <View style={styles.humorStatus}>
+            <TouchableOpacity style={styles.humorButton}>
+              <Image style={styles.emoji}
+              source={VeryAngry} />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.humorButton}>
+              <Image style={styles.emoji}
+              source={Angry} />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.humorButton}>
+              <Image style={styles.emoji}
+              source={Neutral} />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.humorButton}>
+              <Image style={styles.emoji}
+              source={Happy} />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.humorButton}>
+              <Image style={styles.emoji}
+              source={VeryHappy} />
+            </TouchableOpacity>
           </View>
 
-          <View style={styles.newsItem}>
-            <Image style={styles.newsImage} source={News2} resizeMode="cover" />
-            <Text style={styles.newsText}>
-              Brasil enfrenta recorde de afastamentos por transtornos mentais
-            </Text>
-          </View>
         </View>
 
-        <View style={styles.contentSection}>
-          <View style={styles.contentBox}>
-            <Text style={styles.contentText}>
-              • Artigos sobre ansiedade, depressão, estresse, autoestima e muito mais {"\n"}
-              • Ferramentas para autocuidado e práticas de relaxamento {"\n"}
-              • Testes informativos e guias sobre quando procurar ajuda profissional {"\n"}
-              • Conteúdos elaborados por especialistas em psicologia e saúde mental
-            </Text>
-            <Image style={styles.girasol} source={Girasol} resizeMode="contain" />
-          </View>
-        </View>
 
-        <View style={styles.footer}>
-          <Text style={styles.footerText}>
-            <Text style={{ fontWeight: "bold" }}>Você Sabia?</Text> {"\n"}
-            O que você come afeta diretamente seu humor. {"\n"}
-            Dietas ricas em vegetais, frutas, grãos integrais e ômega-3 (como peixes) estão associadas a menores taxas de depressão. Já dietas com excesso de alimentos ultraprocessados e açúcares podem aumentar o risco de problemas mentais.
-          </Text>
+        <View style={styles.humorHistoryBox}>
+          <Text style={styles.historyTitle}>Seu histórico</Text>
+
+          {/*backend */}
+          <View style={styles.historyItem}><Text>Teste</Text></View>
+          <View style={styles.historyItem}><Text>Teste</Text></View>
+          <View style={styles.historyItem}><Text>Teste</Text></View>
+          <View style={styles.historyItem}><Text>Teste</Text></View>
+
         </View>
 
       </ScrollView>
+
+      < NavBar />
+
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
+    width: '100%',
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#FFDE59',
   },
 
   scrollContent: {
+
     flexGrow: 1,
-    justifyContent: 'flex-start',
     alignItems: 'center',
-    paddingBottom: 20,
+    justifyContent: 'center',
+    backgroundColor: '#4E3427',
+    marginVertical: 120,
+    borderRadius: 40,
   },
 
-  header: {
-    flex: 0.2,
+
+  userSection: {
     width: '100%',
-    backgroundColor: '#FFDE59',
-    paddingTop: 40,
-    paddingBottom: 20,
-    borderBottomStartRadius: 40,
-    borderBottomEndRadius: 40,
+    alignItems: 'flex-start',
+    justifyContent: "flex-start",
+    flexDirection: "row",
+    marginBottom: 40,
+    marginLeft: 50,
   },
 
-  headerContent: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingHorizontal: 20,
+  userPhoto: {
+    width: 90,
+    height: 90,
+    borderRadius: 45,
+    marginBottom: 10,
   },
 
-  logo: {
-    width: 40,
-    height: 40,
-    marginRight: 10,
+  userInfo: {
+    marginLeft: 15,
   },
 
-  title: {
-    fontSize: 22,
+  userName: {
+    fontSize: 20,
     fontWeight: 'bold',
-    color: '#5C4012',
-  },
-
-  newsSection: {
-    flex: 0.3,
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    width: '100%',
-    paddingVertical: 15,
-    marginVertical: 30,
-  },
-
-  newsItem: {
-    backgroundColor: "#4E3D27",
-    width: width * 0.42,
-    marginHorizontal: 5,
-    overflow: 'hidden',
-    backgroundColor: '#fff',
-    borderRadius: 10,
-  },
-
-  newsImage: {
-    width: '100%',
-    height: 100,
-  },
-
-  newsText: {
-    backgroundColor: "#4E3D27",
-    fontSize: 12,
-    padding: 6,
     color: 'white',
-    borderBottomRightRadius: 10,
-    borderBottomLeftRadius: 10,
   },
 
-  contentSection: {
-    flex: 0.3,
-    width: '100%',
-    alignItems: 'center',
-    marginVertical: 10,
+  userAge: {
+    fontSize: 14,
+    color: 'white',
   },
 
-  contentBox: {
+  humorBox: {
     width: '90%',
-    height: '100%',
-    backgroundColor: '#4E3D27',
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: '#FFDE59',
     borderRadius: 20,
     padding: 15,
-    flexDirection: 'column',
-    position: 'relative',
+    marginBottom: 20,
   },
 
-  contentText: {
-    fontSize: 15,
-    color: 'white',
-    lineHeight: 18,
+  humorText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    marginBottom: 10,
+    color: '#5c4012',
   },
 
-  girasol: {
-    width: 60,
-    height: 60,
-    position: 'absolute',
-    bottom: 10,
-    right: 10,
-    opacity: 0.4,
+  humorStatus: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 10,
+    paddingHorizontal: 10,
   },
 
-  footer: {
-    flex: 0.2,
-    width: '100%',
+  humorButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginHorizontal: 10,
+  },
+
+  emoji: {
+    width: 40,
+    height: 40,
+    marginHorizontal: 10,
+  },
+
+  humorDescriptionBox: {
+    alignItems: 'center',
+    paddingHorizontal: 10,
+  },
+
+  humorDescription: {
+    fontSize: 14,
+    color: '#5c4012',
+    textAlign: 'center',
+  },
+
+  humorHistoryBox: {
+    width: '90%',
+    backgroundColor: '#ffde59',
+    borderRadius: 20,
     padding: 15,
-    backgroundColor: '#FFDE59',
-    borderTopLeftRadius: 30,
-    borderTopRightRadius: 30,
   },
 
-  footerText: {
-    fontSize: 13,
-    color: '#333',
-    lineHeight: 18,
+  historyTitle: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#5c4012',
+    marginBottom: 10,
+  },
+
+  historyItem: {
+    backgroundColor: '#fff',
+    borderRadius: 10,
+    padding: 8,
+    marginBottom: 8,
   },
 });

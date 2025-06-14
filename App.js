@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   return (
     <>
-    <Home />
+    <Account />
     </>
   );
 }
