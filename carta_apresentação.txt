@@ -1,0 +1,91 @@
+Nome do Projeto: Núcleo de Saúde Mental
+
+Descrição do Tema: O projeto “Núcleo de Saúde Mental” tem como objetivo
+desenvolver um aplicativo móvel voltado ao apoio emocional e à disseminação de
+informações acessíveis sobre transtornos mentais como ansiedade, depressão e
+outros que afetam amplamente a população nos dias atuais. A aplicação visa
+ampliar o acesso ao conhecimento e à conscientização sobre a importância da
+saúde mental, integrando tecnologia e acolhimento.
+
+1. Identificação das Partes Envolvidas e Parceiros
+Nome da Instituição/Organização/Empresa: Universidade Wyden Unimetrocamp
+CNPJ: 69.441.194/0001-67
+Setor/Área de Atuação: Educação e Inovação Social
+Equipe de Análise: Gabriel Augusto, Lucas Queiroz, Vitória Mansano
+Plataformas e Ferramentas Utilizadas: React Native, ExpoGo, JavaScript, Styled
+Components, React Navigation
+
+2. Equipe de Alunos
+Nome do Aluno RA Curso / Turma
+Gabriel Augusto Amaral Ferreira Leite
+Vitória Mansano Ale
+Lucas Vinicius Rodrigues de Queiroz
+202308428578
+202308428772
+202302862004
+ADS / 3003
+ADS / 3003
+ADS / 3003
+
+3. Problemática Identificada
+Descrição: O aumento expressivo dos casos de transtornos mentais, aliado à
+desinformação e ao estigma, tem agravado situações de sofrimento psíquico. A
+dificuldade de acesso a informações confiáveis e suporte imediato é um entrave para
+o bem-estar mental da população.
+Objetivo do Projeto: Criar uma ferramenta digital que promova educação,
+acolhimento e apoio em saúde mental, de forma acessível, responsiva e
+multiplataforma.
+
+4. Diagnóstico e Teorização
+Diagnóstico: Há uma carência de aplicativos confiáveis, com interface intuitiva, que
+ofereçam conteúdo validado e práticas de autocuidado relacionadas à saúde mental.
+Referências Teóricas: OMS (Organização Mundial da Saúde); Bardin, L. (Análise de
+Conteúdo); Minayo, M. C. (Pesquisa Social).
+
+5. Metodologia
+Conjunto de Dados Utilizado: Artigos científicos, dados da OMS e portais de saúde
+pública.
+Ferramentas de Desenvolvimento: React Native, ExpoGo, Visual Studio Code.
+Ferramentas Operacionais: Análise qualitativa de conteúdo, entrevistas exploratórias
+(em planejamento).
+Cronograma de Atividades: - Planejamento e briefing do projeto - Criação da
+arquitetura das telas - Desenvolvimento com React Native e testes no ExpoGo -
+Avaliação de usabilidade e feedback
+
+6. Análise dos Resultados
+Descobertas: Alta aceitação da proposta por parte de colegas e profissionais;
+carência de conteúdo confiável em apps similares.
+Forças e Fraquezas: + Interface amigável, design leve + Linguagem acessível -
+Limitação de integrações com APIs públicas
+Oportunidades e Ameaças: + Crescente demanda por apoio em saúde mental +
+Possibilidade de parcerias com instituições de saúde - Risco de concorrência com
+apps comerciais
+
+7. Relatório Final e Plano de Melhoria
+Resumo das Ações Realizadas: Desenvolvimento inicial do aplicativo com React
+Native, testes em ambiente ExpoGo, construção de conteúdo educativo, layout
+intuitivo e responsivo.
+Plano de Melhoria Proposto: Ampliar funcionalidades, incluir versão offline, integrar
+com profissionais voluntários e redes de apoio.
+
+8. Conclusões
+Conclusões Gerais: O projeto tem potencial de gerar impacto social positivo,
+oferecendo um canal seguro, confiável e acessível de apoio emocional e informação
+sobre saúde mental.
+Impacto do Projeto: Contribui para a democratização do acesso à saúde mental,
+promovendo prevenção, educação e acolhimento por meio da tecnologia.
+
+9. Palavras-chave
+Saúde Mental, Apoio Emocional, React Native, ExpoGo, Autocuidado, Tecnologia
+Social
+
+10. Referências Bibliográficas
+Organização Mundial da Saúde (OMS). Saúde Mental e Bem-Estar. Bardin, L. (2011).
+Análise de Conteúdo. Minayo, M. C. (2012). Pesquisa Social: Teoria, Método e
+Criatividade.
+
+11. Anexos
+Anexo I: Prints das telas desenvolvidas, protótipos e layout.
+
+12. Orientador
+Professor: Luiz Gustavo Turatti
